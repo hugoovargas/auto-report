@@ -1,0 +1,7 @@
+id_venda,data,produto,quantidade,preco_unitario,categoria
+1001,2026-10-01,Teclado,2,150.00,Perifericos
+1002,2026-10-02,Mouse,3,80.00,Perifericos
+1003,2026-10-03,Monitor,1,950.00,Monitores
+1004,2026-10-04,Teclado,1,150.00,Perifericos
+1005,2026-10-05,Monitor,2,950.00,Monitores
+1006,2026-10-06,Mouse,2,80.00,Perifericos
