@@ -34,3 +34,35 @@ def gerar_relatorio(vendas: pd.DataFrame,invalidas: pd.DataFrame,caminho_saida: 
     faturamento_por_produto = calcular_faturamento_por_produto(vendas)
     faturamento_por_categoria = calcular_faturamento_por_categoria(vendas)
 
+    with pd.ExcelWriter(caminho_saida, engine="openpyxl") as escritor:
+        indicadores.to_excel(
+            escritor,
+            sheet_name="Resumo",
+            index=False,
+        )
+
+        faturamento_por_produto.to_excel(
+            escritor,
+            sheet_name="Resumo",
+            index=False,
+            startcol=3,
+        )
+
+        faturamento_por_categoria.to_excel(
+            escritor,
+            sheet_name="Resumo",
+            index=False,
+            startcol=6,
+        )
+
+        vendas.to_excel(
+            escritor,
+            sheet_name="Vendas",
+            index=False,
+        )
+
+        invalidas.to_excel(
+            escritor,
+            sheet_name="Registros inválidos",
+            index=False,
+        )
