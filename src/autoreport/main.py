@@ -3,6 +3,7 @@ from pathlib import Path
 from autoreport.reader import ler_vendas
 from autoreport.validator import validar_vendas
 from autoreport.processor import processar_vendas
+from autoreport.report import gerar_relatorio
 
 def main() -> None:
     raiz_projeto = Path(__file__).resolve().parents[2]
@@ -13,7 +14,26 @@ def main() -> None:
 
     # Valida os registros e separa os válidos dos inválidos.
     validas, invalidas = validar_vendas(vendas)
+
+    # Processa as vendas válidas.
     vendas_processadas = processar_vendas(validas)
+
+    # Define o caminho do relatório.
+    caminho_relatorio = (
+            raiz_projeto
+            / "data"
+            / "output"
+            / "relatorio_vendas.xlsx"
+    )
+
+    # Gera o relatório Excel.
+    gerar_relatorio(
+        vendas_processadas,
+        invalidas,
+        caminho_relatorio,
+    )
+
+    print(f"\nRelatório gerado em: {caminho_relatorio}")
 
     # Exibe o resumo da validação.
     print("Validação concluída!")
