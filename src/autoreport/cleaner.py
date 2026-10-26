@@ -14,7 +14,7 @@ def limpar_vendas(vendas: pd.DataFrame) -> pd.DataFrame:
                 dados[coluna]
                 .astype("string")
                 .str.strip()
-                .str.replace(r"/s+", " ", regex=True)
+                .str.replace(r"\s+", " ", regex=True)
                 .replace("", pd.NA)
             )
 
