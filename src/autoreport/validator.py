@@ -50,7 +50,7 @@ def validar_vendas(vendas: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
 
     # Verifica datas inválidas.
     datas_invalidas = datas.isna()
-    registrar_problema(datas[datas_invalidas], "Data inválida")
+    registrar_problema(datas_invalidas, "Data inválida")
 
     # Verifica quantidade: numérica, maior que zero e inteira.
     registrar_problema(
@@ -64,8 +64,8 @@ def validar_vendas(vendas: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
 
     # Verifica preço: numérico e não negativo.
     registrar_problema(
-        precos.isna() | (precos < 0),
-        "Preço unitário deve ser um número maior ou igual a zero",
+        precos.isna() | (precos <= 0),
+        "Preço unitário deve ser um número maior que zero",
     )
 
     possui_problema = pd.Series(

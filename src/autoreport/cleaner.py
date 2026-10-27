@@ -42,7 +42,7 @@ def padronizar_textos(dados: pd.DataFrame) -> pd.DataFrame:
                 .str.casefold()
             )
 
-        dados[coluna] = dados[coluna].replace("", pd.NA)
+            dados[coluna] = dados[coluna].replace("", pd.NA)
 
     return dados
 
