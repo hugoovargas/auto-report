@@ -49,7 +49,8 @@ def validar_vendas(vendas: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     registrar_problema(ids_duplicados, "ID de venda duplicado")
 
     # Verifica datas inválidas.
-    registrar_problema(datas.isna(), "Data inválida")
+    datas_invalidas = datas.isna()
+    registrar_problema(datas[datas_invalidas], "Data inválida")
 
     # Verifica quantidade: numérica, maior que zero e inteira.
     registrar_problema(

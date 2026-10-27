@@ -68,6 +68,30 @@ def test_invalidar_vendas_com_ids_duplicados():
     assert len(invalidas) == 2
 
     assert invalidas["motivo_validacao"].str.contains(
-        "ID de venda duplicado"
-    ).all()
+         "ID de venda duplicado"
+     ).all()
+
+
+def test_converter_dados_validos_para_tipos_adequados():
+    vendas = pd.DataFrame({
+        "id_venda": ["V001"],
+        "data": ["2026-10-27"],
+        "produto": ["mouse"],
+        "quantidade": ["3"],
+        "preco_unitario": ["19.90"],
+        "categoria": ["perifericos"],
+    })
+
+    validas, invalidas = validar_vendas(vendas)
+
+    assert len(validas) == 1
+    assert invalidas.empty
+
+    assert pd.api.types.is_datetime64_any_dtype(validas["data"])
+    assert pd.api.types.is_integer_dtype(validas["quantidade"])
+    assert pd.api.types.is_numeric_dtype(validas["preco_unitario"])
+
+    assert validas.loc[0, "quantidade"] == 3
+    assert validas.loc[0, "preco_unitario"] == 19.90
+
 
