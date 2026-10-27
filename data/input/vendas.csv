@@ -1,7 +1,18 @@
 id_venda,data,produto,quantidade,preco_unitario,categoria
-1001,2026-10-01,Teclado,2,150.00,Perifericos
-1002,2026-10-02,Mouse,3,80.00,Perifericos
-1003,2026-10-03,Monitor,-1,950.00,Monitores
-1004,2026-10-04,Teclado,1,150.00,Perifericos
-1005,2026-10-05,Monitor,2,950.00,Monitores
-1006,2026-10-06,Mouse,2,80.00,Perifericos
+V001,2026-10-20, Mouse Gamer ,2,89.90, Perifericos 
+V002,2026-10-21,TECLADO,1,149.90,Perifericos
+V003,2026-10-21,mouse gamer,3,89.90,PERIFERICOS
+V004,2026-10-22,Monitor 24 polegadas,2,799.90,Monitores
+V005,2026-10-23,Cabo HDMI,5,25.50,Acessorios
+V006,2026-10-24,  Headset   USB ,1,219.00,Audio
+V007,2026-10-25,Webcam,2,159.90,Acessorios
+V008,2026-10-26,Suporte para notebook,1,0.00,Acessorios
+V009,2026-10-26,   ,1,29.90,Acessorios
+V010,data-invalida,Mouse Pad,1,39.90,Acessorios
+V011,2026-10-27,Cadeira,0,499.90,Moveis
+V012,2026-10-27,Mesa,1,-50.00,Moveis
+V013,2026-10-27,Teclado numerico,1.5,49.90,Perifericos
+V014,2026-10-27,Caixa de som,abc,99.90,Audio
+V015,2026-10-27,Adaptador USB,1,19.90,   
+V016,2026-10-27,Hub USB,2,59.90,Acessorios
+V016,2026-10-28,Hub USB,1,59.90,Acessorios
